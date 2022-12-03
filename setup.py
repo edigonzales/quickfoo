@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="quickfoo",                        # This is the name of the package
-    version="0.0.1",                        # The initial release version
+    version="0.0.3",                        # The initial release version
     author="Stefan Ziegler",                # Full name of the author
     description="QuickFoo Test Package",
     long_description=long_description,      # Long description read from the the readme file
@@ -21,4 +21,7 @@ setuptools.setup(
     package_dir={'':'quickfoo/src'},        # Directory of the source code of the package
     install_requires=[]                     # Install other dependencies if any
 )
+
+#    package_data={'Unix_so':['lib/ctypes_OpenSubdiv.so']},    
+# 'lib_ext': ...*
 

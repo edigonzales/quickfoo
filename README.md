@@ -20,7 +20,14 @@ python3 -m pip install –-upgrade setuptools wheel
 Build distribution:
 ```
 python3 setup.py sdist bdist_wheel
+python3 setup.py sdist bdist_wheel --plat-name=manylinux2014_aarch64 
 ```
+manylinux2014_x86_64
+macosx_11_0_x86_64
+win_amd64
+
+manylinux2014_aarch64 
+macosx_11_0_arm64
 
 Install package locally:
 ```
@@ -86,7 +93,3 @@ sdk i java 22.3.r17-grl
 
 ## GraalVM
 
-```
-./gradlew clean build shadowJar
-native-image --no-fallback --no-server -cp build/libs/ilivalidator-libnative-all.jar --shared -H:Name=libilivalidator
-```
