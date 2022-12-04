@@ -9,7 +9,7 @@ on:
 jobs:
 
   build-native-lib:
-    name: 'Build with GraalVM on ${{ matrix.os }}'
+    name: 'Build on ${{ matrix.os }}'
     strategy:
       fail-fast: true
       matrix:
@@ -52,9 +52,9 @@ jobs:
       - name: Build Python package
         run: python setup.py bdist_wheel --plat-name=${{matrix.plat-name}}
 
-      - name: 'List artifacts'
-        run: |
-          ls -la dist
+      # - name: 'List artifacts'
+      #   run: |
+      #     ls -la dist
 
       # - name: Build native image
       #   id: buildNative
@@ -77,13 +77,13 @@ jobs:
       #     path: |
       #       lib/build/native/nativeCompile/
 
-      # - name: 'Upload build artifact'
-      #   if: always() && (steps.buildNative.outcome == 'success')
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: artifacts-${{ runner.os }}
-      #     path: |
-      #       lib/build/native/nativeCompile/
+      - name: 'Upload build artifact'
+        #if: always() && (steps.buildNative.outcome == 'success')
+        uses: actions/upload-artifact@v2
+        with:
+          name: artifacts
+          path: |
+            dist/
 
 
 
