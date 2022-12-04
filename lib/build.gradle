@@ -61,7 +61,7 @@ tasks.register('copySharedLibs', Copy) {
     }
     into '../src/lib_ext/'
 }
-compileNative.finalizedBy(copySharedLibs)
+nativeCompile.finalizedBy(copySharedLibs)
 
 
 
