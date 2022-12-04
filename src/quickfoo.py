@@ -4,11 +4,11 @@ from ctypes import *
 from importlib.resources import files
 
 if platform.uname()[0] == "Windows":
-    lib_name = "win.dll"
+    lib_name = "libilivalidator.dll"
 elif platform.uname()[0] == "Linux":
     lib_name = "libilivalidator.so"
 else:
-    lib_name = "osx.dylib"
+    lib_name = "libilivalidator.dylib"
 
 def quicktext():
     print('Hello, welcome to QuickFoo package.')
