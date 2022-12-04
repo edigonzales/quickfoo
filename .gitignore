@@ -1,5 +1,10 @@
 .DS_Store
 venv
+*.h
+*.lib
+*.dll
+*.so
+*.dylib
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -50,3 +50,18 @@ graalvmNative {
         */
     }
 }
+
+tasks.register('copySharedLibs', Copy) {
+    from ('build/native/nativeCompile') {
+        include '*.h'
+        include '*.lib'
+        include '*.so'
+        include '*.dll'
+        include '*.dylib'
+    }
+    into '../src/lib_ext/'
+}
+compileNative.finalizedBy(copySharedLibs)
+
+
+

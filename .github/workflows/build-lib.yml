@@ -16,6 +16,14 @@ jobs:
         # https://github.com/actions/runner-images
         os: [ ubuntu-22.04, macos-12, windows-2022 ]
         #os: [ ubuntu-22.04]
+        include:
+          - os: 'ubuntu-22.04'
+            plat-name: 'xxxxx'
+          - os: 'macos-12'
+            plat-name: 'xxxxx'
+          - os: 'windows-2022'
+            plat-name: 'xxxxx'
+
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -33,26 +41,45 @@ jobs:
           cache: 'gradle'
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build native image
-        id: buildNative
-        #./gradlew nativeTest
-        run: |
-          cd lib
-          ./gradlew clean nativeCompile
-
-      - uses: actions/upload-artifact@v2
-        if: ${{ failure() }}
+      - uses: actions/setup-python@v4
         with:
-          name: reports-native
-          path: lib/build/reports/tests/
+          python-version: '3.9'
+          cache: 'pip' # caching pip dependencies
+        
+      - name: Install Python requirements
+        run: pip install --upgrade setuptools wheel
 
-      - name: 'Upload build artifact'
-        if: always() && (steps.buildNative.outcome == 'success')
-        uses: actions/upload-artifact@v2
-        with:
-          name: artifacts-${{ runner.os }}
-          path: |
-            lib/build/native/nativeCompile/
+
+      # - name: Build native image
+      #   id: buildNative
+      #   #./gradlew nativeTest
+      #   run: |
+      #     cd lib
+      #     ./gradlew clean nativeCompile
+
+      # - uses: actions/upload-artifact@v2
+      #   if: ${{ failure() }}
+      #   with:
+      #     name: reports-native
+      #     path: lib/build/reports/tests/
+
+      # - name: 'Upload build artifact'
+      #   if: always() && (steps.buildNative.outcome == 'success')
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: artifacts-${{ runner.os }}
+      #     path: |
+      #       lib/build/native/nativeCompile/
+
+      # - name: 'Upload build artifact'
+      #   if: always() && (steps.buildNative.outcome == 'success')
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: artifacts-${{ runner.os }}
+      #     path: |
+      #       lib/build/native/nativeCompile/
+
+
 
   # release:
   #   needs: [build-jvm, build-native]

@@ -1,5 +1,12 @@
 # quickfoo
 
+## Ideen / Frage
+- "Korrekter" wäre wohl der Weg ohne `--plat-name`. Soweit ich es verstehe, benötige ich dazu einen custom build Befehl, der mit die shared lib mit GraalVM buildet. Siehe z.B. https://jichu4n.com/posts/how-to-add-custom-build-steps-and-commands-to-setuppy/ 
+- Projektstruktur nochmals überdenken bzw. einlesen. Gibt es dazu irgendein Skript?
+- Wie muss/kann die Shared Lib getestet werden?
+- Python Tests ganz allgemein?
+- source dist sollte m.E. keine shared libs enthalten, da diese os abhängig sind. 
+
 ## Create Package
 
 ```
@@ -14,7 +21,7 @@ Install requirements:
 ```
 python3 -m venv venv
 source venv/bin/activate
-python3 -m pip install –-upgrade setuptools wheel
+python3 -m pip install --upgrade setuptools wheel
 ```
 
 Build distribution:
