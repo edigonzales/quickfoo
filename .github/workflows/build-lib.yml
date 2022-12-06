@@ -67,10 +67,12 @@ jobs:
         if: always() && (steps.buildNative.outcome == 'success')
         run: python setup.py bdist_wheel --plat-name=${{matrix.plat-name}}
 
+#          pip install importlib-metadata
       - name: Dummy test (todo make proper python tests)
         if: ${{ success() }}
         run: |
-          pip install importlib-metadata
+          python -m venv venv
+          source venv/bin/activate
           pip install -e .
           python test.py
 
