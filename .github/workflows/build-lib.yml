@@ -70,6 +70,7 @@ jobs:
       - name: Dummy test (todo make proper python tests)
         if: ${{ success() }}
         run: |
+          pip install importlib-metadata
           pip install -e .
           python test.py
 
