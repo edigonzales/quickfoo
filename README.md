@@ -6,6 +6,7 @@
 - Wie muss/kann die Shared Lib getestet werden?
 - Python Tests ganz allgemein?
 - source dist sollte m.E. keine shared libs enthalten, da diese os abhängig sind. 
+- Welche Python-Version? Mit 3.8 muss 3rd party importlib-resources verwendet werden.
 
 ## Create Package
 

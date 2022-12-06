@@ -75,6 +75,8 @@ jobs:
           source venv/bin/activate
           pip install -e .
           python test.py
+        shell: bash
+
 
       # - name: 'List artifacts'
       #   run: |
