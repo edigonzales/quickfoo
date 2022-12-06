@@ -27,5 +27,5 @@ setup(
     packages=find_packages(where="src"),
     package_dir={'':'src'},        # Directory of the source code of the package
     package_data={'lib_ext':['*.h', '*.lib', '*.dll', '*.so', '*.dylib']},
-    install_requires=[]                     # Install other dependencies if any
+    install_requires=['importlib-metadata']                     # Install other dependencies if any
 )
