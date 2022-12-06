@@ -1,7 +1,8 @@
 import platform
 
 from ctypes import *
-from importlib.resources import files
+#from importlib.resources import files
+from importlib_resources import files
 
 if platform.uname()[0] == "Windows":
     lib_name = "libilivalidator.dll"
