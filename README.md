@@ -1,6 +1,9 @@
 # quickfoo
 
 ## Ideen / Frage
+
+- ili2gpkg!!!!
+
 - "Korrekter" wäre wohl der Weg ohne `--plat-name`. Soweit ich es verstehe, benötige ich dazu einen custom build Befehl, der mit die shared lib mit GraalVM buildet. Siehe z.B. https://jichu4n.com/posts/how-to-add-custom-build-steps-and-commands-to-setuppy/ 
 - Projektstruktur nochmals überdenken bzw. einlesen. Gibt es dazu irgendein Skript?
 - Wie muss/kann die Shared Lib getestet werden?

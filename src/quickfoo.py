@@ -28,6 +28,7 @@ class Ilivalidator:
         lib_path = files('lib_ext').joinpath(lib_name)
         print(lib_name)
         print(lib_path)
+        # str() seems to be necessary on windows: https://github.com/TimDettmers/bitsandbytes/issues/30
         self.dll = CDLL(str(lib_path))
         isolate = c_void_p()
         self.isolatethread = c_void_p()
