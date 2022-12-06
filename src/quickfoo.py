@@ -27,6 +27,7 @@ class Ilivalidator:
 
         lib_path = files('lib_ext').joinpath(lib_name)
         print(lib_name)
+        print(lib_path)
         self.dll = CDLL(lib_path)
         isolate = c_void_p()
         self.isolatethread = c_void_p()
