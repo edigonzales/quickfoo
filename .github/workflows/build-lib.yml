@@ -69,7 +69,7 @@ jobs:
 
 #          pip install importlib-metadata
       - name: Dummy test (todo make proper python tests)
-        if: ${{ success() }} && ${{ runner.os != 'Windows' }}
+        if: ${{ success() && runner.os != 'Windows' }}
         run: |
           python -m venv venv
           source venv/bin/activate
@@ -78,7 +78,7 @@ jobs:
         shell: bash
 
       - name: Dummy test (todo make proper python tests) on Windows
-        if: ${{ success() }} && ${{ runner.os == 'Windows' }}
+        if: ${{ success() && runner.os == 'Windows' }}
         run: |
           python -m venv venv
           venv\Scripts\Activate.ps1
