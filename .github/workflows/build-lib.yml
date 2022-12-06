@@ -71,7 +71,7 @@ jobs:
         if: ${{ success() }}
         run: |
           pip install -e .
-
+          python test.py
 
       # - name: 'List artifacts'
       #   run: |
