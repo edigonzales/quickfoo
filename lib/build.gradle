@@ -15,10 +15,18 @@ repositories {
     maven { url 'https://jars.interlis.ch/' }
 }
 
+configurations.all {
+    resolutionStrategy {
+        force 'org.xerial:sqlite-jdbc:3.39.4.1'
+    }
+}
+
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
 
     api 'ch.interlis:ilivalidator:1.12.1'
+    api 'ch.interlis:ili2gpkg:4.9.1'
+    api 'org.xerial:sqlite-jdbc:3.39.4.1'
     api 'org.graalvm.nativeimage:svm:22.3.0'
 }
 

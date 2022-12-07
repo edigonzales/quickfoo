@@ -53,3 +53,6 @@ class Ilivalidator:
         result = self.dll.ilivalidator(self.isolatethread, c_char_p(bytes(data_file_name, "utf8")))
         return result
 
+    def load2gpkg(self, data_file_name):
+        result = self.dll.ili2gpkg(self.isolatethread, c_char_p(bytes(data_file_name, "utf8")))
+        return result
