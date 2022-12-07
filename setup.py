@@ -10,7 +10,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="quickfoo",                        # This is the name of the package
-    version="0.0.5",                        # The initial release version
+    version="0.0.6",                        # The initial release version
     author="Stefan Ziegler",                # Full name of the author
     description="QuickFoo Test Package",
     long_description=long_description,      # Long description read from the the readme file
