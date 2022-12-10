@@ -67,7 +67,7 @@ tasks.register('copySharedLibs', Copy) {
         include '*.dll'
         include '*.dylib'
     }
-    into '../src/lib_ext/'
+    into '../quickfoo/lib_ext/'
 }
 nativeCompile.finalizedBy(copySharedLibs)
 
